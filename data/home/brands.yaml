@@ -2,10 +2,13 @@ enabled: true
 id: "brands"
 
 content:
-  title: "We work with customers brands and startups "
+  title: "Look at all these X accounts and brands that love XBetter: "
   items:
-    - "images/brands-samsumg.png"
-    - "images/brands-google.png"
-    - "images/brands-adobe.png"
-    - "images/brands-spotify.png"
-    - "images/brands-dropbox.png"
+    - "images/Logo_with_text_no_margin.png"
+    - "images/Logo_title_small_white_no_bg.png"
+    - "images/pfp_new_small.png"
+    # - "images/brands-samsumg.png"
+    # - "images/brands-google.png"
+    # - "images/brands-adobe.png"
+    # - "images/brands-spotify.png"
+    # - "images/brands-dropbox.png"

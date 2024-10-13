@@ -1,7 +1,7 @@
-<nav class="navbar navbar-expand-xl navbar-light bg-light py-4">
+<nav class="navbar navbar-expand-xl navbar-dark bg-black py-4">
   <div class="container">
     <a class="navbar-brand d-flex align-items-center" href="{{ .Site.BaseURL }}">
-      {{ partial "utilities/image.html" "images/logo.png" }}
+      {{ partial "utilities/image.html" "images/Logo_with_text_no_margin.png" }}
       <span class="fs-3 fw-semibold text-uppercase text-primary">{{ .Site.Title }}</span>
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -18,7 +18,7 @@
       <ul class="navbar-nav ms-xl-3 mb-2 mb-xl-0">
         {{ range .Site.Menus.buttons }}
           <li class="nav-item">
-            <a class="nav-link btn btn-primary text-light px-4" href="{{ .URL }}">{{ .Name }}</a>
+            <a class="nav-link btn btn-light px-4" href="{{ .URL }}">{{ .Name }}</a>
           </li>
         {{ end }}
       </ul>

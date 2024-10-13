@@ -2,14 +2,18 @@ enabled: true
 id: "hero"
 
 content:
-  title: "How to **level up** your business"
-  text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Est faucibus tellus leo non pellentesque lorem vel. Arcu magna eros, potenti duis."
+  title: "'For you' page is a bitch.
+
+
+          Make it **YOUR BITCH.**"
+
+  text: "XBetter lets you curate X's feed to include only the content that you want to see. 
+  No more scrolling through a wall of engagement baits to get to that one valuable post."
 
   buttonPrimary:
-    label: "How we work"
+    label: "BECOME X PIMP"
     url: "#"
 
-  buttonSecondary:
-    label: "Let's talk"
-    url: ""
-
+  # buttonSecondary:
+  #   label: "Let's talk"
+  #   url: ""

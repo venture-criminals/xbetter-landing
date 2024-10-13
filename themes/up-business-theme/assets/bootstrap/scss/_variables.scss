@@ -401,7 +401,7 @@ $position-values: (
 //
 // Settings for the `<body>` element.
 
-$body-bg:                   $white !default;
+$body-bg:                   $black !default;
 $body-color:                $gray-900 !default;
 $body-text-align:           null !default;
 
@@ -731,7 +731,7 @@ $table-variants: (
   "warning":    shift-color($warning, $table-bg-scale),
   "danger":     shift-color($danger, $table-bg-scale),
   "light":      $light,
-  "dark":       $dark,
+  "dark":       $black,
 ) !default;
 // scss-docs-end table-loop
 
@@ -1127,14 +1127,14 @@ $navbar-toggler-transition:         box-shadow .15s ease-in-out !default;
 // scss-docs-end navbar-variables
 
 // scss-docs-start navbar-theme-variables
-$navbar-dark-color:                 rgba($white, .55) !default;
-$navbar-dark-hover-color:           rgba($white, .75) !default;
-$navbar-dark-active-color:          $white !default;
-$navbar-dark-disabled-color:        rgba($white, .25) !default;
+$navbar-dark-color:                 rgba($black, 1) !default;
+$navbar-dark-hover-color:           rgba($black, .75) !default;
+$navbar-dark-active-color:          $black !default;
+$navbar-dark-disabled-color:        rgba($black, .25) !default;
 $navbar-dark-toggler-icon-bg:       url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'><path stroke='#{$navbar-dark-color}' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/></svg>") !default;
-$navbar-dark-toggler-border-color:  rgba($white, .1) !default;
+$navbar-dark-toggler-border-color:  rgba($black, .1) !default;
 
-$navbar-light-color:                rgba($black, .55) !default;
+$navbar-light-color:                rgba($black, 1) !default;
 $navbar-light-hover-color:          rgba($black, .7) !default;
 $navbar-light-active-color:         rgba($black, .9) !default;
 $navbar-light-disabled-color:       rgba($black, .3) !default;
