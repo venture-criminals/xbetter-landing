@@ -9,8 +9,8 @@ title: ""
 summaryLength: 20
 
 params:
-  title: "Up Business"
-  description: "We specialize in providing services to desing websites, applications, build and maintain business for customers."
+  title: "XBetter"
+  description: "Make you X feed not suck"
   images: 
     - "images/Logo_with_text_no_margin.png"
     # - "images/hero-image.png"
@@ -61,7 +61,7 @@ menus:
 
   buttons:
     - name: "Get on Chrome Store"
-      url: "/#"
+      url: "https://forms.gle/u2gjYKmVN41VhMmEA"
       weight: 5
       pre: "btn btn-primary text-light"
 
