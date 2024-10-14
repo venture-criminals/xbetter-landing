@@ -1,0 +1,99 @@
+.intro {
+  margin-bottom: 60px;
+  
+  .intro-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 30px;
+  }
+
+  h1 {
+    font-size: 48px;
+    line-height: 64px; // Increased from 56px to 64px for more spacing
+    margin-top: 0;
+    margin-bottom: 0;
+    flex: 1;
+    @include breakpoint('small') {
+      font-size: 88px;
+      line-height: 104px; // Increased from 94px to 104px for more spacing
+    }
+    strong {
+      color: var(--highlight-color);
+    }
+  }
+
+  h2 {
+    font-size: 50px;
+    line-height: 56px;
+    @include breakpoint('small') {
+      width: 80%;
+    }
+  }
+
+  p {
+    font-size: 20px;
+    line-height: 26px;
+    @include breakpoint('small') {
+      width: 80%;
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  .read-more {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: bold;
+    @include breakpoint('small') {
+      font-size: 22px;
+      line-height: 32px;
+    }
+  }
+
+  img {
+    max-width: 30%;
+    margin-left: 20px;
+  }
+
+  .intro-content {
+    clear: both;
+  }
+
+  .cta-button,
+  .secondary-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+
+    @include breakpoint('small') {
+      margin-right: 20px;
+      margin-bottom: 0;
+    }
+  }
+
+  .cta-button {
+    color: #000000;
+    background-color: #ffffff;
+
+    &:hover {
+      background-color: var(--highlight-color);
+    }
+  }
+
+  .secondary-button {
+    color: #ffffff;
+    background-color: #000000;
+    border: 2px solid #ffffff;
+
+    &:hover {
+      color: #000000;
+      background-color: #ffffff;
+    }
+  }
+}
