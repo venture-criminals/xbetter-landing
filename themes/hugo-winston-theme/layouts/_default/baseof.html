@@ -31,8 +31,9 @@
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ .Permalink }}"/>
     {{ if .Params.image }}
-    <meta property="og:image" content="{{ .Site.BaseURL }}hero.png"/>
-    <meta itemprop="image" content="{{ .Site.BaseURL }}hero.png" />
+    <meta property="og:image" content= "{{ .Site.Params.heroImagePath | relURL }}"/> 
+    <!-- content="{{ .Site.BaseURL }}hero.png"/> -->
+    <meta itemprop="image" content="{{ .Site.Params.heroImagePath | relURL }}" />
     {{ end }}
     {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
     <meta name="twitter:card" content="summary"/>
