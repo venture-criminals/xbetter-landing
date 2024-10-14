@@ -31,8 +31,8 @@
     {{ if .Params.image }}
     <!-- <meta property="og:image" content="{{ .Params.image | absURL }}"/>
     <meta itemprop="image" content="{{ .Params.image | absURL }}" /> -->
-    <meta property="og:image" content="{{ .Site.Params.richPreviewImage }}"/>
-    <meta itemprop="image" content="{{ .Site.Params.richPreviewImage }}" />
+    <meta property="og:image" content="{{ .Site.Params.richPreviewImage | absURL }}"/>
+    <meta itemprop="image" content="{{ .Site.Params.richPreviewImage | absURL }}" />
     {{ end }}
     {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
     <meta name="twitter:card" content="summary"/>
