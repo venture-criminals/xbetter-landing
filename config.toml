@@ -12,6 +12,10 @@ pygmentsUseClasses = true
   [module.hugoVersion]
     extended = true
     min = "0.55.0"
+  # [module.imports]
+  #   # path = 'github.com/gethugothemes/hugo-modules/seo-tools/basic-seo'
+  #   path = 'github.com/gethugothemes/hugo-modules/seo-tools/basic-seo'
+
 
 [params]
   google_analytics_id = ""
@@ -46,12 +50,18 @@ pygmentsUseClasses = true
   ctaLink = "https://forms.gle/NnREU6AnYfFhqsA89"
   ctaText = "BECOME THE X PIMP"
   
-  richPreviewImage = "/images/hero.png"
-  richPreviewText = "Clean your X feed like a Mafioso."
 
   footerImagePath = "/images/footer_image.png"
   footerLink = "https://venturecriminals.com"
   
+# seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
+# seo meta data for OpenGraph / Twitter Card
+[metadata]
+keywords = ["Startups", "Venture", "Twitter", "X", "Warsaw", "Clean Twitter", "Clean X", "Indiehackers", "Solopreneurs", "X filters", "Twitter filters"]
+description = "Clean your X feed like a Mafioso."
+author = "Venture Criminals"
+image = "images/hero.png"
+
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]

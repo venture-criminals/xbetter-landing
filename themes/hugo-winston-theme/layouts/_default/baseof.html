@@ -2,6 +2,8 @@
 <html lang="en">
 
 <head>
+  <!-- opengraph -->
+  {{ partial "basic-seo.html" . }}
   <meta charset="utf-8">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
@@ -23,7 +25,7 @@
     <link rel="stylesheet" href="{{ ($extended).RelPermalink }}">
   {{- end }}
 
-  {{ block "meta_tags" . }}
+  <!-- {{ block "meta_tags" . }}
     {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
     <meta property="og:title" content="{{ .Site.Params.richPreviewText }}"/>
     <meta property="og:type" content="website"/>
@@ -31,14 +33,12 @@
     {{ if .Params.image }}
     <meta property="og:image" content="{{ .Params.image | absURL }}"/>
     <meta itemprop="image" content="{{ .Params.image | absURL }}" />
-    <!-- <meta property="og:image" content="{{ .Site.Params.richPreviewImage | absURL }}"/>
-    <meta itemprop="image" content="{{ .Site.Params.richPreviewImage | absURL }}" /> -->
     {{ end }}
     {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
     <meta name="twitter:card" content="summary"/>
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
-  {{ end }}
+  {{ end }} -->
 
   {{ if and .Site.Params.googleFontsUrl .Site.Params.enableGoogleFonts }}
     <link rel="preconnect" href="https://fonts.gstatic.com">
