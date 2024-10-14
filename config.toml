@@ -54,6 +54,10 @@ pygmentsUseClasses = true
   footerImagePath = "/images/footer_image.png"
   footerLink = "https://venturecriminals.com"
   
+  richPreviewImage = "/images/hero.png"
+  richPreviewText = "Clean your X feed like a Mafioso."
+
+
 # seo module: https://github.com/gethugothemes/hugo-modules/tree/master/seo-tools/basic-seo
 # seo meta data for OpenGraph / Twitter Card
 [metadata]
