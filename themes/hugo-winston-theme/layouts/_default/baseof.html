@@ -24,8 +24,8 @@
   {{- end }}
 
   <!-- opengraph -->
-  {{ block "meta_tags" . }}
-    {{ partial "basic-seo.html" . }}
+  {{ partial "basic-seo.html" . }}
+  <!-- {{ block "meta_tags" . }} -->
   <!-- {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
     <meta property="og:title" content="{{ .Site.Params.richPreviewText }}"/>
     <meta property="og:type" content="website"/>
@@ -38,7 +38,7 @@
     <meta name="twitter:card" content="summary"/>
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}"/>{{ end }} -->
-  {{ end }}
+  <!-- {{ end }} -->
 
   {{ if and .Site.Params.googleFontsUrl .Site.Params.enableGoogleFonts }}
     <link rel="preconnect" href="https://fonts.gstatic.com">
