@@ -12,7 +12,11 @@ pygmentsUseClasses = true
   [module.hugoVersion]
     extended = true
     min = "0.55.0"
-  
+
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+
 
 [params]
   google_analytics_id = ""
