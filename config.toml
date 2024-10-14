@@ -18,11 +18,14 @@ pygmentsUseClasses = true
   twitter_handle = "@donGiacobbe"
   showAuthorOnHomepage = false
   showAuthorOnPosts = false
+  
   showIntroContentOnHomepage = true
   showPostsOnHomepage = false
   usePaginationOnHomepage = false
   limitPostsOnHomepage = 3 # only used if usePaginationOnHomepage is false
+  
   sortPostsByDateOldestFirst = false
+  
   addDot = true
   addFrame = true
   highlightColor = '#7B15FF'
@@ -31,17 +34,24 @@ pygmentsUseClasses = true
   headingColor = "#eaeaea"
   textColor = "#eaeaea"
   dotColor = "#7B15FF"
+  
   enableGoogleFonts = true 
   googleFontsUrl = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
   fontFamilyHeading = "Poppins"
   fontFamilyParagraph = "Helvetica"
   fontFamilyMonospace = "monospace"
+  
   heroImage = true
   heroImagePath = "/images/hero.png"
-  footerImagePath = "/images/footer_image.png"
-  footerLink = "https://venturecriminals.com"
   ctaLink = "https://forms.gle/NnREU6AnYfFhqsA89"
   ctaText = "BECOME THE X PIMP"
+  
+  richPreviewImage = "/images/hero.png"
+  richPreviewText = "Clean your X feed like a Mafioso."
+
+  footerImagePath = "/images/footer_image.png"
+  footerLink = "https://venturecriminals.com"
+  
 
 # markdown config settings https://gohugo.io/getting-started/configuration-markup/#goldmark
 [markup]

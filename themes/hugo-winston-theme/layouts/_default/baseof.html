@@ -25,10 +25,15 @@
 
   {{ block "meta_tags" . }}
     {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
-    <meta property="og:title" content="{{ .Title }}"/>
+    <meta property="og:title" content="{{ .Site.Params.richPreviewText }}"/>
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{ .Permalink }}"/>
-    {{ if .Params.image }}<meta property="og:image" content="{{ .Params.image | absURL }}"/>{{ end }}
+    {{ if .Params.image }}
+    <!-- <meta property="og:image" content="{{ .Params.image | absURL }}"/>
+    <meta itemprop="image" content="{{ .Params.image | absURL }}" /> -->
+    <meta property="og:image" content="{{ .Site.Params.richPreviewImage }}"/>
+    <meta itemprop="image" content="{{ .Site.Params.richPreviewImage }}" />
+    {{ end }}
     {{ if .Params.description }}<meta property="og:description" content="{{ .Params.description }}"/>{{ end }}
     <meta name="twitter:card" content="summary"/>
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
