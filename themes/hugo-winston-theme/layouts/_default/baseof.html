@@ -6,8 +6,6 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   <title>{{ block "title" . }}{{ .Title }} - {{ .Site.Title }}{{ end }}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#7b16ff" media="(prefers-color-scheme: light)">
-  <meta name="theme-color" content="#7b16ff" media="(prefers-color-scheme: dark)">
   <link rel="icon" href="{{ .Site.BaseURL }}hero.png">
   <link rel="canonical" href="{{ .Permalink }}" />
 
@@ -25,7 +23,7 @@
 
   <!-- opengraph -->
   <!-- {{ partial "basic-seo.html" . }} -->
-  {{ block "meta_tags" . }}
+  <!-- {{ block "meta_tags" . }} -->
   {{ if .Params.description }}<meta name="description" content="{{ .Params.description }}"/>{{ end }}
     <meta property="og:title" content="{{ .Site.Params.richPreviewText }}"/>
     <meta property="og:type" content="website"/>
@@ -39,7 +37,7 @@
     <meta name="twitter:card" content="summary"/>
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:site" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
     {{ if .Site.Params.twitter_handle }}<meta name="twitter:creator" content="{{ .Site.Params.twitter_handle }}"/>{{ end }}
-  {{ end }}
+  <!-- {{ end }} -->
 
   {{ if and .Site.Params.googleFontsUrl .Site.Params.enableGoogleFonts }}
     <link rel="preconnect" href="https://fonts.gstatic.com">

@@ -33,12 +33,13 @@ pygmentsUseClasses = true
   
   addDot = true
   addFrame = true
-  highlightColor = '#7B15FF'
+  highlightColor = '#a78bfa'
   baseColor = "#000000"
   baseOffsetColor = "#eaeaea"
   headingColor = "#eaeaea"
   textColor = "#eaeaea"
-  dotColor = "#7B15FF"
+  dotColor = "#a78bfa"
+  themeColor = "#a78bfa"
   
   enableGoogleFonts = true 
   googleFontsUrl = "https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap"
@@ -50,6 +51,7 @@ pygmentsUseClasses = true
   heroImagePath = "/images/hero.png"
   ctaLink = "https://forms.gle/NnREU6AnYfFhqsA89"
   ctaText = "BECOME THE X PIMP"
+  ctaIcon = "fa fa-chrome" # https://fontawesome.com/v4.7/
   
 
   footerImagePath = "/images/footer_image.png"

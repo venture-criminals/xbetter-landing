@@ -17,7 +17,7 @@
     <div class="intro-content">{{ .Content }}</div>
     {{ end }}
   
-    <a href="{{ .Site.Params.ctaLink }}" class="cta-button">{{ .Site.Params.ctaText }}</a>
+    <a href="{{ .Site.Params.ctaLink }}" class="cta-button">{{ .Site.Params.ctaText }} <i class="{{ .Site.Params.ctaIcon }}"></i></a>
     <a href="{{ .Params.secondaryButtonLink }}" class="secondary-button">{{ .Params.secondaryButtonText }}</a>
   </div>
 

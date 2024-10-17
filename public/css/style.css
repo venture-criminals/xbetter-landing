@@ -4,10 +4,10 @@
   --font-family-monospace: monospace;
   --base-color: #000000;
   --base-offset-color: #eaeaea;
-  --highlight-color: #7B15FF;
+  --highlight-color: #a78bfa;
   --heading-color: #eaeaea;
   --text-color: #eaeaea;
-  --dot-color: #7B15FF; }
+  --dot-color: #a78bfa; }
 
 body, html {
   margin: 0;
@@ -102,7 +102,7 @@ h1, h2, h3 {
       font-size: 22px;
       line-height: 32px; } }
 .footer-image {
-  width: 40%;
+  width: 25%;
   height: auto;
   display: block;
   margin-left: auto;
