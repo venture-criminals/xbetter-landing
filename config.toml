@@ -3,7 +3,6 @@ languageCode = "en-us"
 theme = "hugo-winston-theme"
 themesDir = "themes"
 title = "XBetter | Clean your X feed like a Mafioso."
-paginate = 1
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -78,24 +77,29 @@ image = "images/hero.png"
       unsafe = true
       xhtml = false
 
-# [menu]
-#   [[menu.main]]
-#     identifier = 'home'
-#     name = 'Home'
-#     url = '/'
-#     weight = 1
-#   [[menu.main]]
-#     name = "Blog"
-#     identifier = "blog"
-#     weight = 2
-#     url = "/posts/"
-#   [[menu.main]]
-#     name = "About"
-#     identifier = "about"
-#     weight = 3
-#     url = "/About/"
-#   [[menu.main]]
-#     name = "Tags"
-#     identifier = "tags"
-#     weight = 4
-#     url = "/tags/"
+[menu]
+  [[menu.main]]
+    identifier = 'home'
+    name = 'Home'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    identifier = 'privacy'
+    name = 'Privacy'
+    url = '/privacy/'
+    weight = 2
+  # [[menu.main]]
+  #   name = "Blog"
+  #   identifier = "blog"
+  #   weight = 2
+  #   url = "/posts/"
+  # [[menu.main]]
+  #   name = "About"
+  #   identifier = "about"
+  #   weight = 3
+  #   url = "/About/"
+  # [[menu.main]]
+  #   name = "Tags"
+  #   identifier = "tags"
+  #   weight = 4
+  #   url = "/tags/"
