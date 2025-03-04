@@ -3,11 +3,11 @@ title: "'For you' page is a bitch. "
 title2: "Make it "
 colorTitle: YOUR BITCH
 
-secondaryButtonText: Follow me on X
+secondaryButtonText: Follow Jacob on X
 secondaryButtonLink: https://x.com/VentureCriminal
 
-description: XBetter lets you curate X’s feed to include only the content that you want to see. No more scrolling through a wall of engagement baits to get to that one valuable post.
+description: XBetter curates your X feed by removing low quality posts based on your preferences. No more scrolling through a wall of engagement baits to get tweets that truly deserve your attention.
 image: images/hero.png
 ---
 
-XBetter lets you curate X’s feed to include only the content that you want to see. No more scrolling through a wall of engagement baits to get to that one valuable post.
+XBetter curates your X feed by removing low quality posts based on your preferences. No more scrolling through a wall of engagement baits to get tweets that truly deserve your attention.

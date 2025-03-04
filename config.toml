@@ -2,7 +2,7 @@ baseURL = "https://xbetter.app/"
 languageCode = "en-us"
 theme = "hugo-winston-theme"
 themesDir = "themes"
-title = "XBetter | Clean your X feed like a Mafioso."
+title = "XBetter - Clean your X feed like a Mafioso."
 pygmentsCodeFences = true
 pygmentsCodefencesGuessSyntax = true
 pygmentsUseClasses = true
@@ -48,7 +48,7 @@ pygmentsUseClasses = true
   
   heroImage = true
   heroImagePath = "/images/hero.png"
-  ctaLink = "https://forms.gle/NnREU6AnYfFhqsA89"
+  ctaLink = "https://chromewebstore.google.com/detail/xbetter/hpdmpilcmnlblnfdkcoikgmjaopafjoa"
   ctaText = "BECOME THE X PIMP"
   ctaIcon = "fa fa-chrome" # https://fontawesome.com/v4.7/
   
