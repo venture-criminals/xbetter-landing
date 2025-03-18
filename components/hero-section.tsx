@@ -7,6 +7,8 @@ import { InfiniteSlider } from '@/components/motion-primitives/infinite-slider'
 import { ProgressiveBlur } from '@/components/motion-primitives/progressive-blur'
 import { TextEffect } from '@/components/motion-primitives/text-effect'
 import { SiGooglechrome } from '@icons-pack/react-simple-icons'
+import { AnimatedImage } from '@/components/motion-primitives/motion-image'
+import { ButtonEffect } from '@/components/motion-primitives/button-effect'
 
 export default function HeroSection() {
     return (
@@ -33,12 +35,18 @@ export default function HeroSection() {
                                 >
                                     {"For You page\nis a bitch.\nMake it\nYOUR BITCH."}
                                 </TextEffect>
-                                <p className="mt-8 max-w-2xl text-pretty text-lg">
-                                XBetter curates your X feed by removing low quality posts based on your preferences. No more scrolling through a wall of engagement baits to get to tweets that truly deserve your attention.
-                                </p>
+                                <TextEffect
+                                    preset="fade-in-blur"
+                                    as="p" 
+                                    className="mt-8 max-w-2xl text-pretty text-lg"
+                                    speedReveal={3}
+                                >
+                                    XBetter curates your X feed by removing low quality posts based on your preferences. No more scrolling through a wall of engagement baits to get to tweets that truly deserve your attention.
+                                </TextEffect>
 
                                 <div className="mt-12 flex flex-col items-center justify-center gap-2 sm:flex-row lg:justify-start">
-                                    <Button
+                                    <ButtonEffect
+                                        variant='default'
                                         asChild
                                         size="lg"
                                         className="px-5 text-base">
@@ -46,26 +54,27 @@ export default function HeroSection() {
                                             <SiGooglechrome className="size-5" />
                                             <span className="text-nowrap">Get XBetter for Chrome</span>
                                         </Link>
-                                    </Button>
-                                    <Button
-                                        key={2}
+                                    </ButtonEffect>
+                                    <ButtonEffect
+                                        variant='ghost'
                                         asChild
                                         size="lg"
-                                        variant="ghost"
                                         className="px-5 text-base">
                                         <Link href="https://x.com/VentureCriminal">
                                             <span className="text-nowrap">Follow Venture Criminal</span>
                                         </Link>
-                                    </Button>
+                                    </ButtonEffect>
                                 </div>
                             </div>
-                            <Image
+                            <AnimatedImage
+                                initial={{ opacity: 0, filter: 'blur(40px)' }}
+                                animate={{ opacity: 1, filter: 'blur(0px)' }}
+                                transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
                                 className="-z-10 order-first ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                // src="https://res.cloudinary.com/dg4jhba5c/image/upload/v1741605150/abstract-bg_wq4f8w.jpg"
                                 src="/XBetter hero.png"
                                 alt="Xbetter hero image"
-                                height="400"
-                                width="400"
+                                height={400}
+                                width={400}
                             />
                         </div>
                     </div>
