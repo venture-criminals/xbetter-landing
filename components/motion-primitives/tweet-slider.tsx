@@ -103,7 +103,7 @@ export function TweetSlider({
     : {};
 
   return (
-    <div className={cn('overflow-hidden', className)}>
+    <div className={cn('overflow-hidden relative', className)}>
       <motion.div
         className="flex w-max"
         style={{
@@ -139,6 +139,15 @@ export function TweetSlider({
           </motion.div>
         ))}
       </motion.div>
+      <div className="absolute left-[33%] top-0 h-full w-28 flex items-center justify-center z-10">
+        <Image
+          src="/XBetter logo white bg app.png"
+          alt="XBetter Logo"
+          width={80}
+          height={80}
+          className="object-contain"
+        />
+      </div>
     </div>
   );
 }
