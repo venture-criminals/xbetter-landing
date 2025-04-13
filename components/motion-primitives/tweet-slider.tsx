@@ -12,6 +12,8 @@ export type TweetSliderProps = {
   direction?: 'horizontal' | 'vertical';
   reverse?: boolean;
   className?: string;
+  showHidden?: boolean;
+  showLogo?: boolean;
 };
 
 export function TweetSlider({
@@ -21,6 +23,8 @@ export function TweetSlider({
   direction = 'horizontal',
   reverse = false,
   className,
+  showHidden = false,
+  showLogo = true,
 }: TweetSliderProps) {
   const [currentSpeed, setCurrentSpeed] = useState(speed);
   const [ref, { width, height }] = useMeasure();
@@ -28,16 +32,16 @@ export function TweetSlider({
   const [isTransitioning, setIsTransitioning] = useState(false);
   const [key, setKey] = useState(0);
 
-  // Tweet images array
-  const tweetImages = [
-    '/tweet_images/randall_tweet.png',
-    '/tweet_images/jacob_tweet.png',
-    '/tweet_images/merlin_tweet.png',
-    '/tweet_images/donald_tweet_1.png',
-    '/tweet_images/dudu_tweet.png',
-    '/tweet_images/donald_tweet_2.png',
-    '/tweet_images/chad_tweet.png',
-    '/tweet_images/maddy_tweet.png',
+  // Modified tweet images array with both versions
+  const tweetPairs = [
+    { normal: '/tweet_images/randall_tweet.png', hidden: '/tweet_images/randall_tweet_hidden.png' },
+    { normal: '/tweet_images/jacob_tweet.png', hidden: '/tweet_images/jacob_tweet_hidden.png' },
+    { normal: '/tweet_images/merlin_tweet.png', hidden: '/tweet_images/merlin_tweet_hidden.png' },
+    { normal: '/tweet_images/donald_tweet_1.png', hidden: '/tweet_images/donald_tweet_1_hidden.png' },
+    { normal: '/tweet_images/dudu_tweet.png', hidden: '/tweet_images/dudu_tweet_hidden.png' },
+    { normal: '/tweet_images/donald_tweet_2.png', hidden: '/tweet_images/donald_tweet_2_hidden.png' },
+    { normal: '/tweet_images/chad_tweet.png', hidden: '/tweet_images/chad_tweet_hidden.png' },
+    { normal: '/tweet_images/maddy_tweet.png', hidden: '/tweet_images/maddy_tweet_hidden.png' },
   ];
 
   useEffect(() => {
@@ -116,10 +120,9 @@ export function TweetSlider({
         ref={ref}
         {...hoverProps}
       >
-        {[...tweetImages, ...tweetImages].map((src, index) => (
+        {[...tweetPairs, ...tweetPairs].map((pair, index) => (
           <motion.div
-            key={`${src}-${index}`}
-            // className="relative h-[233px] w-[1398px] shrink-0 overflow-hidden rounded-xl"
+            key={`${showHidden ? 'hidden' : 'normal'}-${index}`}
             className="relative h-[100px] w-[650px] shrink-0 overflow-hidden rounded-xl"
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -130,7 +133,7 @@ export function TweetSlider({
             }}
           >
             <Image
-              src={src}
+              src={showHidden ? pair.hidden : pair.normal}
               alt={`Tweet ${index + 1}`}
               fill
               className="object-contain"
@@ -139,15 +142,17 @@ export function TweetSlider({
           </motion.div>
         ))}
       </motion.div>
-      <div className="absolute left-[33%] top-0 h-full w-28 flex items-center justify-center z-10">
-        <Image
-          src="/XBetter logo white bg app.png"
-          alt="XBetter Logo"
-          width={80}
-          height={80}
-          className="object-contain"
-        />
-      </div>
+      {showLogo && (
+        <div className="absolute left-[33%] top-0 h-full w-28 flex items-center justify-center z-10">
+          <Image
+            src={showHidden ? "/XBetter logo white bg app hidden.png" : "/XBetter logo white bg app.png"}
+            alt="XBetter Logo"
+            width={80}
+            height={80}
+            className="object-contain"
+          />
+        </div>
+      )}
     </div>
   );
 }

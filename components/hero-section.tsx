@@ -10,6 +10,7 @@ import { SiGooglechrome } from '@icons-pack/react-simple-icons'
 import { AnimatedImage } from '@/components/motion-primitives/motion-image'
 import { ButtonEffect } from '@/components/motion-primitives/button-effect'
 import { TweetSlider } from './motion-primitives/tweet-slider'
+import { ProgressiveGradient } from './motion-primitives/progressive-gradient'
 
 export default function HeroSection() {
     return (
@@ -90,20 +91,43 @@ export default function HeroSection() {
                             <div className="relative py-6 md:w-[calc(100%-11rem)]">
                                 
                                 <TweetSlider
-                                speedOnHover= {40}
-                                speed={80}
-                                gap={10}
-                                className="w-full"/>
+                                    speedOnHover= {40}
+                                    speed={80}
+                                    gap={10}
+                                    className="w-full"
+                                    showHidden={false} 
+                                    showLogo={true}
+                                />
 
                                 <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
                                 <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
-                                <ProgressiveBlur
-                                    className="pointer-events-none absolute left-0 top-0 h-full w-20"
+                                {/* <ProgressiveBlur
+                                    className="pointer-events-none absolute left-0 top-0 h-full w-130"
                                     direction="left"
                                     blurIntensity={1}
+                                /> */}
+
+                                <ProgressiveGradient
+                                    className="pointer-events-none absolute left-0 top-0 h-full w-101"
+                                    direction="left"
+                                    // startColor="rgba(0, 0, 0, 0)"
+                                    startColor="oklch(0.13 0.028 261.692)"
+                                    endColor="oklch(0.13 0.028 261.692)"
+                                    opacity={0.1}
+                                    layers={10}
                                 />
+
+                                <TweetSlider
+                                    speedOnHover= {40}
+                                    speed={80}
+                                    gap={10}
+                                    className="w-95"
+                                    showHidden={true}
+                                    showLogo={false}
+                                />
+
                                 <ProgressiveBlur
-                                    className="pointer-events-none absolute right-0 top-0 h-full w-20"
+                                    className="pointer-events-none absolute right-0 top-0 h-full w-20 z-10"
                                     direction="right"
                                     blurIntensity={1}
                                 />
