@@ -30,11 +30,8 @@ export function TweetSlider({
   logoPosition = 33, // default to 33%
   startPosition = 'visible',
 }: TweetSliderProps) {
-  const [currentSpeed, setCurrentSpeed] = useState(speed);
-  const [ref, { width, height }] = useMeasure();
+  const [ref, { width }] = useMeasure();
   const translation = useMotionValue(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const [key, setKey] = useState(0);
 
   // Modified tweet images array with both versions
   const tweetPairs = [
@@ -52,13 +49,13 @@ export function TweetSlider({
 
   useEffect(() => {
     let controls;
-    const size = direction === 'horizontal' ? width : height;
-    const contentSize = size + gap;
+    const tweetWidth = 650; // Width of a single tweet
+    const totalWidth = (tweetPairs.length * tweetWidth) + ((tweetPairs.length - 1) * gap);
     
-    // Determine starting position based on startPosition prop
-    const from = startPosition === 'visible' ? 0 : -900; // 650px is the width of a single tweet
-    const to = -contentSize / 2;
-
+    // Both sliders should start from the same relative position
+    const from = 0;
+    const to = -(totalWidth + gap);
+    
     const distanceToTravel = Math.abs(to - from);
     const duration = distanceToTravel / speed;
 
@@ -67,53 +64,33 @@ export function TweetSlider({
       duration: duration,
       repeat: Infinity,
       repeatType: 'loop',
-      repeatDelay: 0,
       onRepeat: () => {
         translation.set(from);
       },
     });
 
     return controls?.stop;
-  }, [translation, speed, width, height, gap, direction, startPosition]);
+  }, [translation, speed, gap]);
 
-  const hoverProps = speedOnHover
-    ? {
-        onHoverStart: () => {
-          setIsTransitioning(true);
-          setCurrentSpeed(speedOnHover);
-        },
-        onHoverEnd: () => {
-          setIsTransitioning(true);
-          setCurrentSpeed(speed);
-        },
-      }
-    : {};
+  // Calculate offset based on startPosition
+  const offset = startPosition === 'hidden' ? -650 : 0;
 
   return (
     <div className={cn('overflow-hidden relative', className)}>
       <motion.div
         className="flex w-max"
         style={{
-          ...(direction === 'horizontal'
-            ? { x: translation }
-            : { y: translation }),
+          x: translation,
           gap: `${gap}px`,
-          flexDirection: direction === 'horizontal' ? 'row' : 'column',
+          flexDirection: 'row',
+          transform: `translateX(${offset}px)`,
         }}
         ref={ref}
-        {...hoverProps}
       >
-        {[...tweetPairs, ...tweetPairs].map((pair, index) => (
+        {[...tweetPairs, ...tweetPairs, ...tweetPairs].map((pair, index) => (
           <motion.div
             key={`${showHidden ? 'hidden' : 'normal'}-${index}`}
             className="relative h-[100px] w-[650px] shrink-0 overflow-hidden rounded-xl"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{
-              duration: 0.3,
-              ease: [0.22, 1, 0.36, 1],
-              delay: index * 0.1,
-            }}
           >
             <Image
               src={showHidden ? pair.hidden : pair.normal}
