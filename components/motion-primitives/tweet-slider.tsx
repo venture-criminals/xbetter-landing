@@ -14,6 +14,8 @@ export type TweetSliderProps = {
   className?: string;
   showHidden?: boolean;
   showLogo?: boolean;
+  logoPosition?: number; // percentage from left (0-100)
+  startPosition?: 'visible' | 'hidden';
 };
 
 export function TweetSlider({
@@ -25,6 +27,8 @@ export function TweetSlider({
   className,
   showHidden = false,
   showLogo = true,
+  logoPosition = 33, // default to 33%
+  startPosition = 'visible',
 }: TweetSliderProps) {
   const [currentSpeed, setCurrentSpeed] = useState(speed);
   const [ref, { width, height }] = useMeasure();
@@ -34,64 +38,43 @@ export function TweetSlider({
 
   // Modified tweet images array with both versions
   const tweetPairs = [
-    { normal: '/tweet_images/randall_tweet.png', hidden: '/tweet_images/randall_tweet_hidden.png' },
-    { normal: '/tweet_images/jacob_tweet.png', hidden: '/tweet_images/jacob_tweet_hidden.png' },
-    { normal: '/tweet_images/merlin_tweet.png', hidden: '/tweet_images/merlin_tweet_hidden.png' },
-    { normal: '/tweet_images/donald_tweet_1.png', hidden: '/tweet_images/donald_tweet_1_hidden.png' },
-    { normal: '/tweet_images/dudu_tweet.png', hidden: '/tweet_images/dudu_tweet_hidden.png' },
-    { normal: '/tweet_images/donald_tweet_2.png', hidden: '/tweet_images/donald_tweet_2_hidden.png' },
-    { normal: '/tweet_images/chad_tweet.png', hidden: '/tweet_images/chad_tweet_hidden.png' },
-    { normal: '/tweet_images/maddy_tweet.png', hidden: '/tweet_images/maddy_tweet_hidden.png' },
+    { normal: '/tweet_images/randall_tweet.png', hidden:  '/tweet_images/chad_tweet_hidden.png'},
+    { normal: '/tweet_images/jacob_tweet.png', hidden: '/tweet_images/maddy_tweet_hidden.png'},
+    { normal: '/tweet_images/merlin_tweet.png', hidden:  '/tweet_images/randall_tweet_hidden.png'},
+    { normal: '/tweet_images/donald_tweet_1.png', hidden:  '/tweet_images/jacob_tweet_hidden.png'},
+    { normal: '/tweet_images/dudu_tweet.png', hidden:  '/tweet_images/merlin_tweet_hidden.png'},
+    { normal: '/tweet_images/donald_tweet_2.png', hidden:  '/tweet_images/donald_tweet_1_hidden.png'},
+    { normal: '/tweet_images/chad_tweet.png', hidden:  '/tweet_images/dudu_tweet_hidden.png'},
+    { normal: '/tweet_images/maddy_tweet.png', hidden:  '/tweet_images/donald_tweet_2_hidden.png'},
+    
+
   ];
 
   useEffect(() => {
     let controls;
     const size = direction === 'horizontal' ? width : height;
     const contentSize = size + gap;
-    const from = reverse ? -contentSize / 2 : 0;
-    const to = reverse ? 0 : -contentSize / 2;
+    
+    // Determine starting position based on startPosition prop
+    const from = startPosition === 'visible' ? 0 : -900; // 650px is the width of a single tweet
+    const to = -contentSize / 2;
 
     const distanceToTravel = Math.abs(to - from);
-    const duration = distanceToTravel / currentSpeed;
+    const duration = distanceToTravel / speed;
 
-    if (isTransitioning) {
-      const remainingDistance = Math.abs(translation.get() - to);
-      const transitionDuration = remainingDistance / currentSpeed;
-
-      controls = animate(translation, [translation.get(), to], {
-        // ease: [0.22, 1, 0.36, 1],
-        ease: 'linear',
-        duration: transitionDuration,
-        onComplete: () => {
-          setIsTransitioning(false);
-          setKey((prevKey) => prevKey + 1);
-        },
-      });
-    } else {
-      controls = animate(translation, [from, to], {
-        ease: 'linear',
-        duration: duration,
-        repeat: Infinity,
-        repeatType: 'loop',
-        repeatDelay: 0,
-        onRepeat: () => {
-          translation.set(from);
-        },
-      });
-    }
+    controls = animate(translation, [from, to], {
+      ease: 'linear',
+      duration: duration,
+      repeat: Infinity,
+      repeatType: 'loop',
+      repeatDelay: 0,
+      onRepeat: () => {
+        translation.set(from);
+      },
+    });
 
     return controls?.stop;
-  }, [
-    key,
-    translation,
-    currentSpeed,
-    width,
-    height,
-    gap,
-    isTransitioning,
-    direction,
-    reverse,
-  ]);
+  }, [translation, speed, width, height, gap, direction, startPosition]);
 
   const hoverProps = speedOnHover
     ? {
@@ -143,9 +126,12 @@ export function TweetSlider({
         ))}
       </motion.div>
       {showLogo && (
-        <div className="absolute left-[33%] top-0 h-full w-28 flex items-center justify-center z-10">
+        <div 
+          className="absolute top-0 h-full w-28 flex items-center justify-center z-10"
+          style={{ left: `${logoPosition}%` }}
+        >
           <Image
-            src={showHidden ? "/XBetter logo white bg app hidden.png" : "/XBetter logo white bg app.png"}
+            src={"/XBetter logo white bg app.png"}
             alt="XBetter Logo"
             width={80}
             height={80}

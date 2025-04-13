@@ -89,15 +89,55 @@ export default function HeroSection() {
                                 <p className="text-end text-sm">Hiding the shittiest tweets</p>
                             </div>
                             <div className="relative py-6 md:w-[calc(100%-11rem)]">
-                                
-                                <TweetSlider
-                                    speedOnHover= {40}
-                                    speed={80}
-                                    gap={10}
-                                    className="w-full"
-                                    showHidden={false} 
-                                    showLogo={true}
-                                />
+                                <div className="relative flex w-full">
+                                    <TweetSlider
+                                        speedOnHover={80}
+                                        speed={80}
+                                        gap={10}
+                                        className="w-[45%]"
+                                        showHidden={true}
+                                        showLogo={false}
+                                        startPosition="hidden"
+                                    />
+
+                                    <TweetSlider
+                                        speedOnHover={80}
+                                        speed={80}
+                                        gap={10}
+                                        className="w-[55%]"
+                                        showHidden={false}
+                                        showLogo={false}
+                                        startPosition="visible"
+                                    />  
+                                    
+                                    {/* Logo and its blurs */}
+                                    <div className="absolute top-0 h-full w-full">
+                                        {/* Left blur */}
+                                        <ProgressiveBlur
+                                            className="pointer-events-none absolute left-[45%] top-0 h-full w-20 z-[5] -translate-x-full"
+                                            direction="right"
+                                            blurIntensity={1}
+                                        />
+                                        
+                                        {/* Logo */}
+                                        <div className="absolute top-0 h-full flex items-center justify-center z-10" style={{ left: '45%', transform: 'translateX(-50%)' }}>
+                                            <Image
+                                                src="/XBetter logo white bg app.png"
+                                                alt="XBetter Logo"
+                                                width={80}
+                                                height={80}
+                                                className="object-contain"
+                                            />
+                                        </div>
+
+                                        {/* Right blur */}
+                                        <ProgressiveBlur
+                                            className="pointer-events-none absolute left-[45%] top-0 h-full w-20 z-[5]"
+                                            direction="left"
+                                            blurIntensity={1}
+                                        />
+                                    </div>
+                                </div>
 
                                 <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
                                 <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
@@ -107,7 +147,7 @@ export default function HeroSection() {
                                     blurIntensity={1}
                                 /> */}
 
-                                <ProgressiveGradient
+                                {/* <ProgressiveGradient
                                     className="pointer-events-none absolute left-0 top-0 h-full w-101"
                                     direction="left"
                                     // startColor="rgba(0, 0, 0, 0)"
@@ -115,16 +155,7 @@ export default function HeroSection() {
                                     endColor="oklch(0.13 0.028 261.692)"
                                     opacity={0.1}
                                     layers={10}
-                                />
-
-                                <TweetSlider
-                                    speedOnHover= {40}
-                                    speed={80}
-                                    gap={10}
-                                    className="w-95"
-                                    showHidden={true}
-                                    showLogo={false}
-                                />
+                                /> */}
 
                                 <ProgressiveBlur
                                     className="pointer-events-none absolute right-0 top-0 h-full w-20 z-10"
