@@ -14,8 +14,8 @@ export type TweetSliderProps = {
   className?: string;
   showHidden?: boolean;
   showLogo?: boolean;
-  logoPosition?: number; // percentage from left (0-100)
-  startPosition?: 'visible' | 'hidden';
+  logoPosition?: number;
+  offset?: number;
 };
 
 export function TweetSlider({
@@ -26,25 +26,23 @@ export function TweetSlider({
   reverse = false,
   className,
   showHidden = false,
-  showLogo = true,
-  logoPosition = 33, // default to 33%
-  startPosition = 'visible',
+  showLogo = false,
+  logoPosition = 33,
+  offset = 0,
 }: TweetSliderProps) {
   const [ref, { width }] = useMeasure();
   const translation = useMotionValue(0);
 
   // Modified tweet images array with both versions
   const tweetPairs = [
-    { normal: '/tweet_images/randall_tweet.png', hidden:  '/tweet_images/chad_tweet_hidden.png'},
-    { normal: '/tweet_images/jacob_tweet.png', hidden: '/tweet_images/maddy_tweet_hidden.png'},
-    { normal: '/tweet_images/merlin_tweet.png', hidden:  '/tweet_images/randall_tweet_hidden.png'},
-    { normal: '/tweet_images/donald_tweet_1.png', hidden:  '/tweet_images/jacob_tweet_hidden.png'},
-    { normal: '/tweet_images/dudu_tweet.png', hidden:  '/tweet_images/merlin_tweet_hidden.png'},
-    { normal: '/tweet_images/donald_tweet_2.png', hidden:  '/tweet_images/donald_tweet_1_hidden.png'},
-    { normal: '/tweet_images/chad_tweet.png', hidden:  '/tweet_images/dudu_tweet_hidden.png'},
-    { normal: '/tweet_images/maddy_tweet.png', hidden:  '/tweet_images/donald_tweet_2_hidden.png'},
-    
-
+    { normal: '/tweet_images/randall_tweet.png', hidden: '/tweet_images/randall_tweet_hidden.png'},
+    { normal: '/tweet_images/jacob_tweet.png', hidden: '/tweet_images/jacob_tweet_hidden.png'},
+    { normal: '/tweet_images/merlin_tweet.png', hidden: '/tweet_images/merlin_tweet_hidden.png'}, 
+    { normal: '/tweet_images/donald_tweet_1.png', hidden: '/tweet_images/donald_tweet_1_hidden.png'},
+    { normal: '/tweet_images/dudu_tweet.png', hidden: '/tweet_images/dudu_tweet_hidden.png'},
+    { normal: '/tweet_images/donald_tweet_2.png', hidden: '/tweet_images/donald_tweet_2_hidden.png'},
+    { normal: '/tweet_images/chad_tweet.png', hidden: '/tweet_images/chad_tweet_hidden.png'},
+    { normal: '/tweet_images/maddy_tweet.png', hidden: '/tweet_images/maddy_tweet_hidden.png'},
   ];
 
   useEffect(() => {
@@ -52,10 +50,11 @@ export function TweetSlider({
     const tweetWidth = 650; // Width of a single tweet
     const totalWidth = (tweetPairs.length * tweetWidth) + ((tweetPairs.length - 1) * gap);
     
-    // Both sliders should start from the same relative position
-    const from = 0;
-    const to = -(totalWidth + gap);
-    
+    // Calculate the starting position to ensure alignment
+    const contentSize = totalWidth + gap;
+    const from = offset;
+    const to = -(contentSize) + offset;
+
     const distanceToTravel = Math.abs(to - from);
     const duration = distanceToTravel / speed;
 
@@ -65,15 +64,13 @@ export function TweetSlider({
       repeat: Infinity,
       repeatType: 'loop',
       onRepeat: () => {
+        // Instantly reset to starting position
         translation.set(from);
       },
     });
 
     return controls?.stop;
-  }, [translation, speed, gap]);
-
-  // Calculate offset based on startPosition
-  const offset = startPosition === 'hidden' ? -650 : 0;
+  }, [translation, speed, gap, offset]);
 
   return (
     <div className={cn('overflow-hidden relative', className)}>
@@ -83,7 +80,6 @@ export function TweetSlider({
           x: translation,
           gap: `${gap}px`,
           flexDirection: 'row',
-          transform: `translateX(${offset}px)`,
         }}
         ref={ref}
       >

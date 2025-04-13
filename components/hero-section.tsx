@@ -97,7 +97,7 @@ export default function HeroSection() {
                                         className="w-[45%]"
                                         showHidden={true}
                                         showLogo={false}
-                                        startPosition="hidden"
+                                        offset={420}
                                     />
 
                                     <TweetSlider
@@ -107,7 +107,6 @@ export default function HeroSection() {
                                         className="w-[55%]"
                                         showHidden={false}
                                         showLogo={false}
-                                        startPosition="visible"
                                     />  
                                     
                                     {/* Logo and its blurs */}
