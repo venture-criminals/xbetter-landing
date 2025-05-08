@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils'
 export const Logo = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="/Xbetter logo white no bg.png"
+            src="/Xbetter-logo-white-no-bg.png"
             alt="XBetter Logo"
             width={28}
             height={28}
@@ -16,7 +16,7 @@ export const Logo = ({ className }: { className?: string }) => {
 export const LogoStroke = ({ className }: { className?: string }) => {
     return (
         <Image
-            src="/Xbetter logo white no bg.png"
+            src="/Xbetter-logo-white-no-bg.png"
             alt="XBetter Logo"
             width={28}
             height={28}

@@ -82,11 +82,8 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, filter: 'blur(40px)' }}
                                 animate={{ opacity: 1, filter: 'blur(0px)' }}
                                 transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-                                // className=  "-z-10 order-first ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                // className=   "-z-10 sm:mx-auto ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                // className="-z-10 mx-auto lg:ml-auto h-20 w-56 md:h-160 md:w-80 object-cover invert lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 className="-z-10 mx-auto h-96 w-96 object-contain invert sm:h-[28rem] sm:w-[28rem] lg:ml-auto lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                src="/XBetter hero2.png"
+                                src="/XBetter-hero2.png"
                                 alt="Xbetter hero image"
                                 height={400}
                                 width={400}
@@ -143,7 +140,7 @@ export default function HeroSection() {
                                         <div className="absolute top-0 h-full flex items-center justify-center z-10" 
                                             style={{ left: '45%', transform: 'translateX(-50%)' }}>
                                             <Image
-                                                src="/XBetter logo white bg app.png"
+                                                src="/XBetter-logo-white-bg-app.png"
                                                 alt="XBetter Logo"
                                                 width={80}
                                                 height={80}
