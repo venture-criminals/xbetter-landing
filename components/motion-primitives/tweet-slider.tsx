@@ -1,7 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
 import { useMotionValue, animate, motion } from 'motion/react';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useMemo } from 'react';
 import useMeasure from 'react-use-measure';
 import Image from 'next/image';
 
@@ -16,6 +16,7 @@ export type TweetSliderProps = {
   showLogo?: boolean;
   logoPosition?: number;
   offset?: number;
+  offsetMultiplier?: number;
 };
 
 export function TweetSlider({
@@ -29,8 +30,51 @@ export function TweetSlider({
   showLogo = false,
   logoPosition = 33,
   offset = 0,
+  offsetMultiplier = 1,
 }: TweetSliderProps) {
   const [ref, { width }] = useMeasure();
+  const [windowWidth, setWindowWidth] = useState(0);
+  
+  // Get window width on client side
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+      
+      handleResize(); // Set initial value
+      window.addEventListener('resize', handleResize);
+      return () => window.removeEventListener('resize', handleResize);
+    }
+  }, []);
+  
+  // Calculate responsive offset
+  const responsiveOffset = useMemo(() => {
+    // Base offset values for different breakpoints
+    const baseOffset = {
+      xs: 140,  // For mobile (<640px)
+      sm: 280,  // For small tablets (≥640px)
+      md: 330,  // For tablets (≥768px)
+      lg: 420,  // For desktops (≥1024px)
+    };
+    
+    let calculatedOffset;
+    if (windowWidth < 640) {
+      calculatedOffset = baseOffset.xs;
+    } else if (windowWidth < 768) {
+      calculatedOffset = baseOffset.sm;
+    } else if (windowWidth < 1024) {
+      calculatedOffset = baseOffset.md;
+    } else {
+      calculatedOffset = baseOffset.lg;
+    }
+    
+    return calculatedOffset * offsetMultiplier;
+  }, [windowWidth, offsetMultiplier]);
+  
+  // Use the calculated offset instead of the fixed one
+  const finalOffset = offset || responsiveOffset;
+  
   const translation = useMotionValue(0);
 
   // Modified tweet images array with both versions
@@ -52,8 +96,8 @@ export function TweetSlider({
     
     // Calculate the starting position to ensure alignment
     const contentSize = totalWidth + gap;
-    const from = offset;
-    const to = -(contentSize) + offset;
+    const from = finalOffset;
+    const to = -(contentSize) + finalOffset;
 
     const distanceToTravel = Math.abs(to - from);
     const duration = distanceToTravel / speed;
@@ -70,7 +114,7 @@ export function TweetSlider({
     });
 
     return controls?.stop;
-  }, [translation, speed, gap, offset]);
+  }, [translation, speed, gap, finalOffset]);
 
   return (
     <div className={cn('overflow-hidden relative', className)}>

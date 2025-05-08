@@ -96,7 +96,7 @@ export default function HeroSection() {
                                 // className=   "-z-10 sm:mx-auto ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 // className="-z-10 mx-auto lg:ml-auto h-20 w-56 md:h-160 md:w-80 object-cover invert lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 className="-z-10 mx-auto h-64 w-64 object-contain invert sm:h-[28rem] sm:w-[28rem] lg:ml-auto lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                src="/XBetter hero.png"
+                                src="/XBetter hero2.png"
                                 alt="Xbetter hero image"
                                 height={400}
                                 width={400}
@@ -110,11 +110,12 @@ export default function HeroSection() {
                 <section className="bg-background pb-16 md:pb-32 mb-32">
                     <div className="group relative m-auto max-w-6xl px-6">
                         <div className="flex flex-col items-center md:flex-row">
-                            <div className="md:max-w-44 md:border-r md:pr-6">
-                                <p className="text-end text-sm">Hiding the shittiest tweets</p>
+                            <div className="w-full text-center mb-4 md:max-w-44 md:text-end md:mb-0 md:border-r md:pr-6">
+                                <p className="text-sm">Hiding the shittiest tweets</p>
                             </div>
-                            <div className="relative py-6 md:w-[calc(100%-11rem)]">
+                            <div className="relative py-6 w-full md:w-[calc(100%-11rem)]">
                                 <div className="relative flex w-full">
+                                    {/* First slider - hidden tweets */}
                                     <TweetSlider
                                         speedOnHover={80}
                                         speed={80}
@@ -122,9 +123,10 @@ export default function HeroSection() {
                                         className="w-[45%]"
                                         showHidden={true}
                                         showLogo={false}
-                                        offset={420}
+                                        offsetMultiplier={1}
                                     />
 
+                                    {/* Second slider - normal tweets */}
                                     <TweetSlider
                                         speedOnHover={80}
                                         speed={80}
@@ -132,6 +134,7 @@ export default function HeroSection() {
                                         className="w-[55%]"
                                         showHidden={false}
                                         showLogo={false}
+                                        offsetMultiplier={0}
                                     />  
                                     
                                     {/* Logo and its blurs */}
@@ -144,10 +147,11 @@ export default function HeroSection() {
                                         />
                                         
                                         {/* Left gradient */}
-                                        <div className="bg-linear-to-l from-background absolute inset-y-0 left-[45%] w-20 -translate-x-full"></div>
+                                        <div className="bg-gradient-to-l from-background absolute inset-y-0 left-[45%] w-20 -translate-x-full"></div>
                                         
                                         {/* Logo */}
-                                        <div className="absolute top-0 h-full flex items-center justify-center z-10" style={{ left: '45%', transform: 'translateX(-50%)' }}>
+                                        <div className="absolute top-0 h-full flex items-center justify-center z-10" 
+                                            style={{ left: '45%', transform: 'translateX(-50%)' }}>
                                             <Image
                                                 src="/XBetter logo white bg app.png"
                                                 alt="XBetter Logo"
@@ -158,7 +162,7 @@ export default function HeroSection() {
                                         </div>
 
                                         {/* Right gradient */}
-                                        <div className="bg-linear-to-r from-background absolute inset-y-0 left-[45%] w-20"></div>
+                                        <div className="bg-gradient-to-r from-background absolute inset-y-0 left-[45%] w-20"></div>
 
                                         {/* Right blur */}
                                         <ProgressiveBlur
@@ -169,8 +173,9 @@ export default function HeroSection() {
                                     </div>
                                 </div>
 
-                                <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
-                                <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
+                                {/* Edge gradients */}
+                                <div className="bg-gradient-to-r from-background absolute inset-y-0 left-0 w-20"></div>
+                                <div className="bg-gradient-to-l from-background absolute inset-y-0 right-0 w-20"></div>
 
                                 <ProgressiveBlur
                                     className="pointer-events-none absolute right-0 top-0 h-full w-20 z-10"
