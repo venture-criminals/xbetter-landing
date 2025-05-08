@@ -2,7 +2,7 @@ const jacob = [
     {
         name: 'don Giacobbe',
         role: 'Mafia Boss (really)',
-        avatar: '/jacob-pfp-full.jpg',
+        avatar: '/Jacob-pfp-full.jpg',
         link: 'https://x.com/venturecriminal',
     },
     {
@@ -20,7 +20,7 @@ const jacob = [
     {
         name: 'YouTube',
         role: '@VentureCriminal',
-        avatar: '/YouTube-logo.jpg',
+        avatar: '/Youtube-logo.jpg',
         link: 'https://www.youtube.com/@VentureCriminal',
     },
 ]
