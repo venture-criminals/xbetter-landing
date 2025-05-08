@@ -10,7 +10,6 @@ import { SiGooglechrome } from '@icons-pack/react-simple-icons'
 import { AnimatedImage } from '@/components/motion-primitives/motion-image'
 import { ButtonEffect } from '@/components/motion-primitives/button-effect'
 import { TweetSlider } from './motion-primitives/tweet-slider'
-import { ProgressiveGradient } from './motion-primitives/progressive-gradient'
 import FeaturesSection from './features-8'
 import Pricing from './pricing'
 import Team from './team'
@@ -20,6 +19,14 @@ export default function HeroSection() {
     return (
         <>
             <HeroHeader />
+            <div className="fixed top-15 left-15 z-[100] p-2 bg-black text-white">
+                <span className="sm:hidden">Base (xs)</span>
+                <span className="hidden sm:inline md:hidden">SM</span>
+                <span className="hidden md:inline lg:hidden">MD</span>
+                <span className="hidden lg:inline xl:hidden">LG</span>
+                <span className="hidden xl:inline 2xl:hidden">XL</span>
+                <span className="hidden 2xl:inline">2XL</span>
+            </div>
             <main className="overflow-x-hidden">
                 {/* Hero section */}
                 <section>
@@ -67,7 +74,7 @@ export default function HeroSection() {
                                         </Link>
                                     </ButtonEffect>
                                     <ButtonEffect
-                                        variant='ghost'
+                                        variant='outline'
                                         asChild
                                         size="lg"
                                         className="px-5 text-base">
@@ -85,7 +92,10 @@ export default function HeroSection() {
                                 initial={{ opacity: 0, filter: 'blur(40px)' }}
                                 animate={{ opacity: 1, filter: 'blur(0px)' }}
                                 transition={{ duration: 1.5, ease: [0.22, 1, 0.36, 1] }}
-                                className="-z-10 order-first ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+                                // className=  "-z-10 order-first ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+                                // className=   "-z-10 sm:mx-auto ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+                                // className="-z-10 mx-auto lg:ml-auto h-20 w-56 md:h-160 md:w-80 object-cover invert lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+                                className="-z-10 mx-auto h-64 w-64 object-contain invert sm:h-[28rem] sm:w-[28rem] lg:ml-auto lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 src="/XBetter hero.png"
                                 alt="Xbetter hero image"
                                 height={400}
@@ -161,21 +171,6 @@ export default function HeroSection() {
 
                                 <div className="bg-linear-to-r from-background absolute inset-y-0 left-0 w-20"></div>
                                 <div className="bg-linear-to-l from-background absolute inset-y-0 right-0 w-20"></div>
-                                {/* <ProgressiveBlur
-                                    className="pointer-events-none absolute left-0 top-0 h-full w-130"
-                                    direction="left"
-                                    blurIntensity={1}
-                                /> */}
-
-                                {/* <ProgressiveGradient
-                                    className="pointer-events-none absolute left-0 top-0 h-full w-101"
-                                    direction="left"
-                                    // startColor="rgba(0, 0, 0, 0)"
-                                    startColor="oklch(0.13 0.028 261.692)"
-                                    endColor="oklch(0.13 0.028 261.692)"
-                                    opacity={0.1}
-                                    layers={10}
-                                /> */}
 
                                 <ProgressiveBlur
                                     className="pointer-events-none absolute right-0 top-0 h-full w-20 z-10"
