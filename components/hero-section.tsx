@@ -19,14 +19,6 @@ export default function HeroSection() {
     return (
         <>
             <HeroHeader />
-            <div className="fixed top-15 left-15 z-[100] p-2 bg-black text-white">
-                <span className="sm:hidden">Base (xs)</span>
-                <span className="hidden sm:inline md:hidden">SM</span>
-                <span className="hidden md:inline lg:hidden">MD</span>
-                <span className="hidden lg:inline xl:hidden">LG</span>
-                <span className="hidden xl:inline 2xl:hidden">XL</span>
-                <span className="hidden 2xl:inline">2XL</span>
-            </div>
             <main className="overflow-x-hidden">
                 {/* Hero section */}
                 <section>
@@ -95,7 +87,7 @@ export default function HeroSection() {
                                 // className=  "-z-10 order-first ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 // className=   "-z-10 sm:mx-auto ml-auto h-56 w-56 object-cover invert sm:h-96 lg:absolute lg:inset-0 lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 // className="-z-10 mx-auto lg:ml-auto h-20 w-56 md:h-160 md:w-80 object-cover invert lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
-                                className="-z-10 mx-auto h-64 w-64 object-contain invert sm:h-[28rem] sm:w-[28rem] lg:ml-auto lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
+                                className="-z-10 mx-auto h-96 w-96 object-contain invert sm:h-[28rem] sm:w-[28rem] lg:ml-auto lg:absolute lg:-right-0 lg:-top-40 lg:order-last lg:h-max lg:w-3/8 lg:object-contain dark:mix-blend-lighten dark:invert-0"
                                 src="/XBetter hero2.png"
                                 alt="Xbetter hero image"
                                 height={400}
