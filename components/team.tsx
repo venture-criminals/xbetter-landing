@@ -54,7 +54,7 @@ export default function TeamSection() {
                 
                 {/* Jacob */}
                 <div>
-                    <h3 className="mb-6 text-lg font-medium text-center">My LLM put so much effort into creating this page, you've no idea. You could at least give me a follow as a thank you.</h3>
+                    <h3 className="mb-6 text-lg font-medium text-center">My LLM put so much effort into creating this page, you&apos;ve no idea. You could at least give me a follow as a thank you.</h3>
                     
                     {/* Profile picture in its own row - centered */}
                     <div className="border-t py-6 flex justify-center">
@@ -108,7 +108,7 @@ export default function TeamSection() {
 
                 {/* Merlin */}
                 <div className="pt-12">
-                    <h3 className="mb-6 text-lg font-medium text-center">Also follow Merlin, Merlin's an awesome gangster.</h3>
+                    <h3 className="mb-6 text-lg font-medium text-center">Also follow Merlin, Merlin&apos;s an awesome gangster.</h3>
                     
                     {/* Profile picture in its own row - centered */}
                     <div className="border-t py-6 flex justify-center">

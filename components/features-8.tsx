@@ -1,6 +1,5 @@
 import { Card, CardContent } from '@/components/ui/card'
 import { Shield, Users } from 'lucide-react'
-import Image from 'next/image'
 
 export default function FeaturesSection() {
     return (
@@ -49,7 +48,7 @@ export default function FeaturesSection() {
                                     </svg>
                                 </div>
                                 <div className="relative z-10 mt-6 space-y-2 text-center">
-                                    <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">AI that's actually useful</h2>
+                                    <h2 className="group-hover:text-secondary-950 text-lg font-medium transition dark:text-white">AI that&apos;s actually useful</h2>
                                     <p className="text-foreground">I was shocked too. But it turns out it can clean up your timeline like a champ.</p>
                                 </div>
                             </CardContent>
@@ -84,7 +83,7 @@ export default function FeaturesSection() {
                                 </div>
                                 <div className="relative z-10 mt-6 space-y-2 text-center">
                                     <h2 className="text-lg font-medium">Curing your brainrot</h2>
-                                    <p className="text-foreground">We don't have any papers on that yet, but think about it. If X induces brainrot, only XBetter can cure it.</p>
+                                    <p className="text-foreground">We don&apos;t have any papers on that yet, but think about it. If X induces brainrot, only XBetter can cure it.</p>
                                 </div>
                             </CardContent>
                         </Card>
@@ -96,7 +95,7 @@ export default function FeaturesSection() {
                                     </div>
                                     <div className="space-y-2">
                                         <h2 className="text-lg font-medium transition">Protect yourself from shit</h2>
-                                        <p className="text-foreground">Politics? Elon's random shitposts? Sex bots? Crypto scams? Now you can just turn them off.</p>
+                                        <p className="text-foreground">Politics? Elon&apos;s random shitposts? Sex bots? Crypto scams? Now you can just turn them off.</p>
                                     </div>
                                 </div>
                                 <div className="rounded-tl-(--radius) relative -mb-6 -mr-6 mt-6 h-fit border-l border-t p-6 py-6 sm:ml-6">

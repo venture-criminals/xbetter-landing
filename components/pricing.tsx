@@ -10,7 +10,7 @@ export default function Pricing() {
             <div className="mx-auto max-w-6xl px-6">
                 <div className="mx-auto max-w-2xl space-y-6 text-center">
                     <h1 className="text-center text-4xl font-semibold lg:text-5xl">Pricing almost as stupid as people on X</h1>
-                    <p>I've no idea how to price this shit, so go ahead and grab it for free while you can.</p>
+                    <p>I&apos;ve no idea how to price this shit, so go ahead and grab it for free while you can.</p>
                 </div>
 
                 <div className="mt-8 flex justify-center md:mt-20">

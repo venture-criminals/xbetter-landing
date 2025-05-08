@@ -22,9 +22,6 @@ export type TweetSliderProps = {
 export function TweetSlider({
   gap = 16,
   speed = 40,
-  speedOnHover = 20,
-  direction = 'horizontal',
-  reverse = false,
   className,
   showHidden = false,
   showLogo = false,
@@ -32,7 +29,7 @@ export function TweetSlider({
   offset = 0,
   offsetMultiplier = 1,
 }: TweetSliderProps) {
-  const [ref, { width }] = useMeasure();
+  const [ref] = useMeasure();
   const [windowWidth, setWindowWidth] = useState(0);
   
   // Get window width on client side
@@ -90,7 +87,6 @@ export function TweetSlider({
   ];
 
   useEffect(() => {
-    let controls;
     const tweetWidth = 650; // Width of a single tweet
     const totalWidth = (tweetPairs.length * tweetWidth) + ((tweetPairs.length - 1) * gap);
     
@@ -102,7 +98,7 @@ export function TweetSlider({
     const distanceToTravel = Math.abs(to - from);
     const duration = distanceToTravel / speed;
 
-    controls = animate(translation, [from, to], {
+    const controls = animate(translation, [from, to], {
       ease: 'linear',
       duration: duration,
       repeat: Infinity,

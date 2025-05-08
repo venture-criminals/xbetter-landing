@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { motion, Variants } from 'motion/react'
+import { motion, Variants, HTMLMotionProps } from 'motion/react'
 import React from 'react'
 import { Button } from '@/components/ui/button'
 import type { ButtonProps } from '@/components/ui/button'
@@ -49,7 +49,9 @@ export type ButtonEffectProps = ButtonProps & {
   onAnimationStart?: () => void
 }
 
-const MotionButton = motion(Button) as any
+const MotionButton = motion(Button) as React.ComponentType<
+  ButtonProps & Omit<HTMLMotionProps<"button">, keyof ButtonProps>
+>
 
 export function ButtonEffect({
   children,
