@@ -11,12 +11,17 @@ import { AnimatedImage } from '@/components/motion-primitives/motion-image'
 import { ButtonEffect } from '@/components/motion-primitives/button-effect'
 import { TweetSlider } from './motion-primitives/tweet-slider'
 import { ProgressiveGradient } from './motion-primitives/progressive-gradient'
+import FeaturesSection from './features-8'
+import Pricing from './pricing'
+import Team from './team'
+import Footer from './footer'
 
 export default function HeroSection() {
     return (
         <>
             <HeroHeader />
             <main className="overflow-x-hidden">
+                {/* Hero section */}
                 <section>
                     <div className="pb-24 pt-12 md:pb-32 lg:pb-56 lg:pt-44">
                         <div className="relative mx-auto flex max-w-6xl flex-col px-6 lg:block">
@@ -52,7 +57,11 @@ export default function HeroSection() {
                                         asChild
                                         size="lg"
                                         className="px-5 text-base">
-                                        <Link href="https://chromewebstore.google.com/detail/xbetter/hpdmpilcmnlblnfdkcoikgmjaopafjoa">
+                                        <Link 
+                                            href="https://chromewebstore.google.com/detail/xbetter/hpdmpilcmnlblnfdkcoikgmjaopafjoa"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <SiGooglechrome className="size-5" />
                                             <span className="text-nowrap">Get XBetter for Chrome</span>
                                         </Link>
@@ -62,7 +71,11 @@ export default function HeroSection() {
                                         asChild
                                         size="lg"
                                         className="px-5 text-base">
-                                        <Link href="https://x.com/VentureCriminal">
+                                        <Link 
+                                            href="https://x.com/VentureCriminal"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                        >
                                             <span className="text-nowrap">Follow Venture Criminal</span>
                                         </Link>
                                     </ButtonEffect>
@@ -82,7 +95,9 @@ export default function HeroSection() {
                     </div>
                 </section>
 
-                <section className="bg-background pb-16 md:pb-32">
+
+                {/* Tweets slider section */}
+                <section className="bg-background pb-16 md:pb-32 mb-32">
                     <div className="group relative m-auto max-w-6xl px-6">
                         <div className="flex flex-col items-center md:flex-row">
                             <div className="md:max-w-44 md:border-r md:pr-6">
@@ -118,6 +133,9 @@ export default function HeroSection() {
                                             blurIntensity={1}
                                         />
                                         
+                                        {/* Left gradient */}
+                                        <div className="bg-linear-to-l from-background absolute inset-y-0 left-[45%] w-20 -translate-x-full"></div>
+                                        
                                         {/* Logo */}
                                         <div className="absolute top-0 h-full flex items-center justify-center z-10" style={{ left: '45%', transform: 'translateX(-50%)' }}>
                                             <Image
@@ -128,6 +146,9 @@ export default function HeroSection() {
                                                 className="object-contain"
                                             />
                                         </div>
+
+                                        {/* Right gradient */}
+                                        <div className="bg-linear-to-r from-background absolute inset-y-0 left-[45%] w-20"></div>
 
                                         {/* Right blur */}
                                         <ProgressiveBlur
@@ -165,6 +186,31 @@ export default function HeroSection() {
                         </div>
                     </div>
                 </section>
+
+                {/* Features section */}
+                <section id="features" className="bg-background pb-4 md:pb-8">
+                    <div className="text-center mb-1">
+                        <h2 className="text-4xl font-bold md:text-5xl">
+                            X can be awesome, actually.
+                        </h2>
+                    </div>
+                    <FeaturesSection />
+                </section>
+
+                {/* Pricing section */}
+                <section id="pricing" className="bg-background pb-2 md:pb-4">
+                    <Pricing />
+                </section>
+
+                {/* About me section */}
+                <section id="team" className="bg-background pb-2 md:pb-4">
+                    <Team />
+                </section>
+
+                {/* Footer */}
+                <footer className="bg-background pb-2 md:pb-4">
+                    <Footer />
+                </footer>
 
             </main>
         </>

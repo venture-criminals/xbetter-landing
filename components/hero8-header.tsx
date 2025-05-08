@@ -7,10 +7,9 @@ import React from 'react'
 import { SiGooglechrome } from '@icons-pack/react-simple-icons'
 
 const menuItems = [
-    { name: 'Features', href: '#link' },
-    { name: 'Solution', href: '#link' },
-    { name: 'Pricing', href: '#link' },
-    { name: 'About', href: '#link' },
+    { name: 'Features', href: '#features' },
+    { name: 'Pricing', href: '#pricing' },
+    { name: 'Team', href: '#team' },
 ]
 
 export const HeroHeader = () => {
@@ -72,14 +71,22 @@ export const HeroHeader = () => {
                                     asChild
                                     variant="outline"
                                     size="sm">
-                                    <Link href="https://x.com/VentureCriminal">
+                                    <Link 
+                                        href="https://x.com/VentureCriminal"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <span>Follow Venture Criminal</span>
                                     </Link>
                                 </Button>
                                 <Button
                                     asChild
                                     size="sm">
-                                    <Link href="https://chromewebstore.google.com/detail/xbetter/hpdmpilcmnlblnfdkcoikgmjaopafjoa">
+                                    <Link 
+                                        href="https://chromewebstore.google.com/detail/xbetter/hpdmpilcmnlblnfdkcoikgmjaopafjoa"
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                    >
                                         <SiGooglechrome className="size-5" />
                                         <span>Get XBetter</span>
                                     </Link>
