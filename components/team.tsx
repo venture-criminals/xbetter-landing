@@ -8,19 +8,19 @@ const jacob = [
     {
         name: 'X',
         role: '@VentureCriminal',
-        avatar: 'X-logo.png',
+        avatar: '/X-logo.png',
         link: 'https://x.com/venturecriminal',
     },
     {
         name: 'Instagram',
         role: '@venturecriminal',
-        avatar: 'Instagram-logo.jpg',
+        avatar: '/Instagram-logo.jpg',
         link: 'https://www.instagram.com/venturecriminal/',
     },
     {
         name: 'YouTube',
         role: '@VentureCriminal',
-        avatar: 'YouTube-logo.jpg',
+        avatar: '/YouTube-logo.jpg',
         link: 'https://www.youtube.com/@VentureCriminal',
     },
 ]
@@ -35,13 +35,13 @@ const merlin = [
     {
         name: 'X',
         role: '@merlindru',
-        avatar: 'X-logo.png',
+        avatar: '/X-logo.png',
         link: 'https://x.com/merlindru',
     },
     {
         name: 'Instagram',
         role: '@merlin.audio.wav',
-        avatar: 'Instagram-logo.jpg',
+        avatar: '/Instagram-logo.jpg',
         link: 'https://www.instagram.com/merlin.audio.wav/',
     }
 ]
